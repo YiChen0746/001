@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+	// 预设3个联系人
+	char names[3][20] = {"Tony", "John", "David"};
+	char phones[3][12] = {"18774162589", "13989651347", "19585263495"};
+	char queryName[20];
+	printf("共有3个联系人：Tony, John, David\n");
+	printf("请输入要查询的姓名：");
+	scanf("%s", queryName);
+	getchar();
+
+	int found = 0;
+	for (int i = 0; i < 3; i++) {
+		if (strcmp(queryName, names[i]) == 0) {
+			printf("姓名：%s  手机号：%s\n", names[i], phones[i]);
+			found = 1;
+			break;
+		}
+	}
+	if (!found) {
+		printf("未找到姓名为「%s」的联系人！\n", queryName);
+	}
+
+return 0; 
+}
